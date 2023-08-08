@@ -189,12 +189,6 @@ COT_ctrl = ctrl.ControlSystem([regraA,regraB,regra1,regra2,regra3,regra4,regra5,
 COT_simulado = ctrl.ControlSystemSimulation(COT_ctrl)
 
 
-
-
-
-
-
-
 #Passando novos valores de entrada para o sistema de controle. No futuro essa etapa vai er substituida por 6 arquivos de dados variando com a profundidade
 #COT baixo: Kivu
 COT_simulado.input['Produtividade primária'] = 264
