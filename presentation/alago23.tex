@@ -1,8 +1,7 @@
-%\documentclass[aspectratio=10]{beamer} %For normal presentation (comment otherwise)
+%\documentclass[aspectratio=43]{beamer} %For normal presentation (comment otherwise)
 \documentclass[aspectratio=169]{beamer} %for widescreen presentation
 \usetheme{Marburg}
-\usefonttheme{serif}
-\usepackage{ulem}
+\usefonttheme{serif}\usepackage{ulem}
 \usecolortheme{default}%albatross, crane, beetle, dove, fly, seagull, wolverine e beaver.
 \setbeamertemplate{frametitle}[default][center]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -39,10 +38,11 @@
 %\smartdiagramset{uniform color list=gray!60!black for 6 items,
 %back arrow disabled=false}
 \usepackage{booktabs} % Top and bottom rules for table
-\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to 
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to
+\usepackage{cancel} 
 \usepackage{multicol}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PREAMBLE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%
 %\subtitle{}
 \author[Carreira et. al]{} 
 \title{Stochastic TOC modeling for East African Rift System Lakes, a possible pre-salt analogous}
@@ -59,34 +59,16 @@
 %\justifying
 %\addtobeamertemplate{headline}{} 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PRESENTATION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PRESENTATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-
-
 \bgroup
 \makeatletter
 \setbeamertemplate{footline}
 \makeatother
-%\maketitle
 \egroup
 \scriptsize 
 \addtobeamertemplate{navigation symbols}{}{\hskip6pt\raisebox{2pt}{\color{blue}\insertframenumber}}
 \setcounter{framenumber}{0}
-%\AtBeginSection[]
-
-
-
-%%% CAPA
-%{
-%\usebackgroundtemplate{
-%\centering
-%\includegraphics[width=\paperwidth,height=\paperheight]{images/capa.png}
-%}
-% Frame 3: plano de fundo
-%\begin{frame}	
-%\end{frame}
-%}
-
 
 
 
@@ -95,8 +77,6 @@
 \centering
 \includegraphics[width=\paperwidth,height=\paperheight]{images/fundo.jpg}
 }
-	
-% Frame 3: plano de fundo
 \begin{frame}
 \maketitle
 	
@@ -104,29 +84,188 @@
 }
 
 
-%%% Recapitulando: CRITÉRIO GEOQUÍMICO DE SELEÇÃO DE AMOSTRAS
+
+%%% DEFININDO O PROBLEMA
+\section{Problem set}
+
+
+{
+\usebackgroundtemplate{
+\centering
+\includegraphics[width=\paperwidth,
+height=\paperheight]{images/fundopreto.jpg}
+}
+{
+\begin{frame}
+	\vspace{1cm}
+	\begin{large}
+		\begin{center}
+	          \color{orange}{... somewhere in the ancient earth  ...}
+		\end{center}
+	\end{large}
+\pause
+	\begin{figure}
+	\includegraphics[scale=0.27]{images/150ma.png}
+	\end{figure}
+\color{yellow}{~150 My ago}
+\end{frame}
+}
+}
+
+{
+\usebackgroundtemplate{
+\centering
+\includegraphics[width=\paperwidth,
+height=\paperheight]{images/fundopreto.jpg}
+}
+{
+\begin{frame}
+	\vspace{1cm}
+	\begin{large}
+		\begin{center}
+	          \color{orange}{... somewhere in the ancient earth  ...}
+		\end{center}
+	\end{large}
+
+	\begin{figure}
+	\includegraphics[scale=0.27]{images/120ma.png}
+	\end{figure}
+\color{yellow}{~120 My ago}
+\end{frame}
+}
+}
+
+{
+\usebackgroundtemplate{
+\centering
+\includegraphics[width=\paperwidth,
+height=\paperheight]{images/fundo.jpg}
+}
+{
+\begin{frame}
+	\vspace{1cm}
+	\begin{figure}
+	\includegraphics[scale=0.3]{images/aptianoT.png}
+		\caption{134My ago lakes were formed. \citep{Scotese2013} }
+	\end{figure}
+\end{frame}
+}
+}
+
+
+{
+\usebackgroundtemplate{
+\centering
+\includegraphics[width=\paperwidth,
+height=\paperheight]{images/fundo.jpg}
+}
+{
+\begin{frame}
+%\frametitle{\textcolor{blue}{Function lake}}
+
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.4]{images/HL.png}
+	\end{figure}
+	\pause
+\begin{equation}
+	\begin{huge}
+         TOC = f(\alpha,\gamma,\delta,...)  \nonumber
+	\end{huge}
+\end{equation}
+\end{frame}
+}
+}
+
+{
+\usebackgroundtemplate{
+\centering
+\includegraphics[width=\paperwidth,
+height=\paperheight]{images/fundo.jpg}
+}
+{
+\begin{frame}
+%\frametitle{\textcolor{blue}{Function lake}}
+	\vspace{0.1cm}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.4]{images/HL.png}
+	\end{figure}
+\begin{equation}
+	TOC = \cancelto{unknow}{f(\alpha,\gamma,\delta,...)}  \nonumber
+\end{equation}
+\end{frame}
+}
+}
+
+
+
+
+
+
+{
+\usebackgroundtemplate{
+\centering
+\includegraphics[width=\paperwidth,
+height=\paperheight]{images/fundopreto.jpg}
+}
+{
+\begin{frame}
+	\vspace{1cm}
+	\begin{large}
+		\begin{center}
+			\color{orange}{Modern Analogous}
+		\end{center}
+	\end{large}
+\pause
+	\begin{figure}
+	\includegraphics[scale=0.05]{images/ALS.jpg}
+	\end{figure}
+\color{yellow}{Considering a wilson's cylcle perspective}
+\end{frame}
+}
+}
+
+
+
+%%% MOSTRAR OS OBJETIVOS DO TRABALHO
 \section{Objectives}
 
 {
 \usebackgroundtemplate{
 \centering
-\includegraphics[width=\paperwidth,height=\paperheight]{images/sumario.png}
+\includegraphics[width=\paperwidth,
+height=\paperheight]{images/fundo.jpg}
 }
 
 { \begin{frame}
-\begin{flushright}
-\frametitle{Objectives}
-\end{flushright}
-
-
+	\vspace{1cm}
+	\begin{center}
+	\begin{large}
+	\color{blue}{Objectives}
+	\end{large}
+	\end{center}
 \begin{flushright}
     \begin{columns}
-    \column{0.4\textwidth}
-        \centering
-        
+
     \column{0.6\textwidth}
         \centering
-	      
+	     	\begin{figure}
+		\centering
+		\includegraphics[scale=0.3]{images/HL.png}
+	\end{figure}
+    \column{0.4\textwidth}
+        \centering
+         \begin{itemize}
+          \item Define the main variables that interact in actual lakes   
+          \pause
+           \item Such lakes should be an pre-salt analogous
+           \pause
+          \item Make a model that can predict TOC values in actual lakes
+           \pause
+           \item Create and publicise a datatable used to mimetize TOC in actual lake systems
+     
+         \end{itemize}
     \end{columns}
 
 \end{flushright}
@@ -136,15 +275,29 @@
 
 
 
+% INTRODUCAO
+\section{Introduction}
+% METODOLOGIA
+\section{Methodology}
+% RESULTADOS E DISCUSSOES
+\section{Results and Discussion}
+% CONCLUSOES 
+\section{Conclusion}
 
 
+
+
+
+
+%%%%%%%%% FINAL %%%%%%%%%%%%%%
 \usebackgroundtemplate{
 \centering
-\includegraphics[width=\paperwidth,height=\paperheight]{images/base.png}
+\includegraphics[width=\paperwidth,height=\paperheight]{images/fundo.jpg}
 }
 \begin{frame}[allowframebreaks]
-\frametitle{References}
-%\beamertemplatetextbibitems
+	\vspace{1cm}
+	\color{blue}{References}
+\beamertemplatetextbibitems
 \tiny
 \bibliographystyle{apalike}
 \bibliography{references}
@@ -152,22 +305,11 @@
 }
 \makeatother
 
-%{
-%\usebackgroundtemplate{
-%\centering
-%\includegraphics[width=\paperwidth,height=\paperheight]{images/interlocucao.png}
-%}
-% Frame 3: plano de fundo
-%\begin{frame}	
-%\end{frame}
-%}
-
 {
 \usebackgroundtemplate{
 \centering
 \includegraphics[width=\paperwidth,height=\paperheight]{images/agradecimento.png}
 }	
-% Frame 3: plano de fundo
 \begin{frame}
 \end{frame}
 }

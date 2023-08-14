@@ -105,3 +105,35 @@ def dados_aleatorios(n, distribuicao, semente):
 
     return dados
 
+
+#-----------------------#
+#          Erro         #
+#-----------------------#
+
+def rms(a,b):
+    '''
+    Root mean square error.
+    Inputs {a,b}: Observed and predicted data
+    Returns {list}: RMS
+    '''
+    MSE = np.square(np.subtract(a,b)).mean()
+    RMSE = math.sqrt(MSE)
+    print('Root Mean Square Error:\n')
+    print(RMSE)
+
+    return RMSE
+  
+
+def phi(a,b):
+    '''
+    Error function calculation. Calculates the difference between the calculated model and predicted model in absolute terms.
+    Returns {list}: error 
+    '''
+    erro = []
+    for i in range(np.size(a)):
+        error = abs(a[i]-b[i])
+        erro.append(error)
+
+    return erro
+
+
