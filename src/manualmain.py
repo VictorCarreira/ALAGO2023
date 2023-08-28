@@ -191,12 +191,12 @@ COT_simulado = ctrl.ControlSystemSimulation(COT_ctrl)
 
 #Passando novos valores de entrada para o sistema de controle. No futuro essa etapa vai er substituida por 6 arquivos de dados variando com a profundidade
 #COT baixo: Kivu
-COT_simulado.input['Produtividade primária'] = 264
-COT_simulado.input['Oxigênio dissolvido'] = 11.76
-COT_simulado.input['Taxa de sedimentação'] = 8
-COT_simulado.input['Profundidade'] = 480
-COT_simulado.input['Granulometria'] = 0.002
-COT_simulado.input['Seleção'] =1
+COT_simulado.input['Produtividade primária'] = 43.30
+COT_simulado.input['Oxigênio dissolvido'] = 2.50
+COT_simulado.input['Taxa de sedimentação'] = 2.8
+COT_simulado.input['Profundidade'] = 112
+COT_simulado.input['Granulometria'] = 0.06
+COT_simulado.input['Seleção'] =0.02
 
 
 
@@ -215,10 +215,15 @@ plt.show()
 COT_calc_T = [4.67,4.79] 
 COT_calc_V = [10.87,10.14]
 COT_calc_K = [7.67,10.72]
+COT_calc_M = [5.89,5.15]
+COT_calc_E = [13.95,15.24]
 
 COT_obs_T = [4.81,4.81] 
 COT_obs_V = [11.23,11.23] 
 COT_obs_K = [7.14,7.14]
+COT_obs_M = [2.81,2.81]
+COT_obs_E = [11.62,11.62]
+
 
 lake_T = ['Triangular','Trapezoidal'] 
 lake_V = ['Triangular','Trapezoidal'] 
@@ -236,9 +241,8 @@ def rms(a,b):
     '''
     MSE = np.square(np.subtract(a,b)).mean()
     RMSE = math.sqrt(MSE)
-    print('Root Mean Square Error:\n')
-    print(RMSE)
-
+    #print('Root Mean Square Error:\n')
+    #print(RMSE)
     return RMSE
   
 
@@ -255,39 +259,67 @@ def phi(a,b):
     return erro
 
 
-#erro = phi(COT_calc_T,COT_obs_T)
-#print('erro=',erro)
-
-erro = rms(COT_obs_T,COT_calc_T)
-
-plt.figure(figsize=(5,5))
-
-plt.errorbar(COT_calc_T, COT_obs_T, yerr=erro, fmt="o", color="r")
-plt.bar(COT_calc_T, COT_obs_T,width = 0.01)
-plt.xticks(COT_calc_T, lake_T)
-plt.title('Lago Tanganyika - COT')
-plt.show()
 
 
-erro = rms(COT_calc_V,COT_obs_V)
-print('erro=',erro)
+erroT0 = rms(COT_obs_T[0],COT_calc_T[0])
+print('RMS Tanganyka Triangular=',erroT0)
+erroT1 = rms(COT_obs_T[1],COT_calc_T[1])
+print('RMS Tanganyka Trapezoidal=',erroT1)
 
 
-plt.errorbar(COT_calc_V, COT_obs_V, yerr=erro, fmt="o", color="r")
-plt.bar(COT_calc_V, COT_obs_V,width = 0.1)
-plt.xticks(COT_calc_V, lake_V)
-plt.title('Lago Victoria - COT')
-plt.show()
+
+erroV0 = rms(COT_calc_V[0],COT_obs_V[0])
+print('RMS Victoria Triangular=',erroV0)
+erroV1 = rms(COT_calc_V[1],COT_obs_V[1])
+print('RMS Victoria Trapezoidal=',erroV1)
 
 
-erro = rms(COT_calc_K,COT_obs_K)
-print('erro=',erro)
+
+errok0 = rms(COT_calc_K[0],COT_obs_K[0])
+print('RMS Kivu Triangular=',errok0)
+errok1 = rms(COT_calc_K[1],COT_obs_K[1])
+print('RMS Kivu Trapezoidal=',errok1)
 
 
-plt.errorbar(COT_calc_K, COT_obs_K, yerr=erro, fmt="o", color="r")
-plt.bar(COT_calc_K, COT_obs_K,width = 0.5)
-plt.xticks(COT_calc_K, lake_K)
-plt.title('Lago Kivu - COT')
-plt.show()
+
+erroM0 = rms(COT_calc_M[0],COT_obs_M[0])
+print('RMS Motu triangular=',erroM0)
+erroM1 = rms(COT_calc_M[1],COT_obs_M[1])
+print('RMS Motu trapezoidal=',erroM1)
+
+
+erroE0 = rms(COT_calc_E[0],COT_obs_E[0])
+print('RMS Edward Triangular=',erroE0)
+erroE1 = rms(COT_calc_E[1],COT_obs_E[1])
+print('RMS Edward Trapezoidal=',erroE1)
+
+
+#plt.figure(figsize=(5,5))
+
+#plt.errorbar(COT_calc_T, COT_obs_T, yerr=erro, fmt="o", color="r")
+#plt.bar(COT_calc_T, COT_obs_T,width = 0.01)
+#plt.xticks(COT_calc_T, lake_T)
+#plt.title('Lago Tanganyika - COT')
+#plt.show()
+
+
+
+
+
+#plt.errorbar(COT_calc_V, COT_obs_V, yerr=erro, fmt="o", color="r")
+#plt.bar(COT_calc_V, COT_obs_V,width = 0.1)
+#plt.xticks(COT_calc_V, lake_V)
+#plt.title('Lago Victoria - COT')
+#plt.show()
+
+
+
+
+
+#plt.errorbar(COT_calc_K, COT_obs_K, yerr=erro, fmt="o", color="r")
+#plt.bar(COT_calc_K, COT_obs_K,width = 0.5)
+#plt.xticks(COT_calc_K, lake_K)
+#plt.title('Lago Kivu - COT')
+#plt.show()
 
 

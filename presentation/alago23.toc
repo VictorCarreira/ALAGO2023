@@ -1,0 +1,7 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Problem set}{2}{0}{1}
+\beamer@sectionintoc {2}{Objectives}{12}{0}{2}
+\beamer@sectionintoc {3}{Introduction}{17}{0}{3}
+\beamer@sectionintoc {4}{Methodology}{30}{0}{4}
+\beamer@sectionintoc {5}{Results and Discussion}{33}{0}{5}
+\beamer@sectionintoc {6}{Conclusion}{40}{0}{6}
